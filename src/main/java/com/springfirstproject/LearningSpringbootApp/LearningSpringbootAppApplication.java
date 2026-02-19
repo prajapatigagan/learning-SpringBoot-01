@@ -23,8 +23,14 @@ public class LearningSpringbootAppApplication implements CommandLineRunner {
 
 
     //Field Injection...
-    @Autowired
-    private RazorpayPaymentServices paymentServices;
+//    @Autowired
+//    private RazorpayPaymentServices paymentServices;
+
+    private final PaymentServices paymentServices;
+    public LearningSpringbootAppApplication(PaymentServices paymentServices) {
+        this.paymentServices = paymentServices;
+    }
+
 
     @Override
     public void run(String... args) throws Exception {
